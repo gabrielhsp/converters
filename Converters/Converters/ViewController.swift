@@ -20,7 +20,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    
     @IBAction func actionShowNext(_ sender: UIButton) {
         switch labelUnit.text! {
             case "Temperatura":
