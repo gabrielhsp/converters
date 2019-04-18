@@ -6,9 +6,16 @@
 //  Copyright © 2019 Gabriel Henrique Santos Pereira. All rights reserved.
 //
 
-struct Unities {
-    var temperature: (firstUnit: String, secondUnit: String) = ("Celsius", "Fahrenheit")
-    var currency: (firstUnit: String, secondUnit: String) = ("Real", "Dólar")
-    var weight: (firstUnit: String, secondUnit: String) = ("Kilograma", "Libra")
-    var distance: (firstUnit: String, secondUnit: String) = ("Metro", "Kilômetro")
+enum Unities: String {
+    case temperatureUnitOne = "Celsius"
+    case temperatureUnitTwo = "Fahrenheit"
+    
+    case currencyUnitOne = "Real"
+    case currencyUnitTwo = "Dolar"
+    
+    case weightUnitOne = "Kilograma"
+    case weightUnitTwo = "Libra"
+    
+    case distanceUnitOne = "Metro"
+    case distanceUnitTwo = "Kilômetro"
 }
