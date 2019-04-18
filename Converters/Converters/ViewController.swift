@@ -22,25 +22,17 @@ class ViewController: UIViewController {
     
     @IBAction func actionShowNext(_ sender: UIButton) {
         switch labelUnit.text! {
-            case "Temperatura":
-                labelUnit.text = "Peso"
-                buttonUnitOne.setTitle("Kilograma", for: .normal)
-                buttonUnitTwo.setTitle("Libra", for: .normal)
+            case Measures.weight.rawValue:
+                changeUnitiesTitles(unitTitle: Measures.weight.rawValue, firstUnitTitle: "Kilograma", secondUnitTitle: "Libra")
             
             case "Peso":
-                labelUnit.text = "Moeda"
-                buttonUnitOne.setTitle("Real", for: .normal)
-                buttonUnitTwo.setTitle("Dólar", for: .normal)
+                changeUnitiesTitles(unitTitle: Measures.currency.rawValue, firstUnitTitle: "Real", secondUnitTitle: "Dólar")
             
             case "Moeda":
-                labelUnit.text = "Distância"
-                buttonUnitOne.setTitle("Metro", for: .normal)
-                buttonUnitTwo.setTitle("Kilômetro", for: .normal)
+                changeUnitiesTitles(unitTitle: Measures.distance.rawValue, firstUnitTitle: "Metro", secondUnitTitle: "Kilômetro")
             
             default:
-                labelUnit.text = "Temperatura"
-                buttonUnitOne.setTitle("Celsius", for: .normal)
-                buttonUnitTwo.setTitle("Fahrenheit", for: .normal)
+                changeUnitiesTitles(unitTitle: Measures.temperature.rawValue, firstUnitTitle: "Celsius", secondUnitTitle: "Fahrenheit")
         }
         
         actionConvert(nil)
@@ -123,5 +115,11 @@ class ViewController: UIViewController {
             labelResultUnit.text = "Metros"
             labelResult.text = String(distance * 1000.0)
         }
+    }
+    
+    func changeUnitiesTitles(unitTitle: String, firstUnitTitle: String, secondUnitTitle: String) {
+        labelUnit.text = unitTitle
+        buttonUnitOne.setTitle(firstUnitTitle, for: .normal)
+        buttonUnitTwo.setTitle(secondUnitTitle, for: .normal)
     }
 }
